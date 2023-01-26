@@ -1,0 +1,15 @@
+/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/bin/Debug/net5.0/Udemy_dotNet.deps.json
+/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/bin/Debug/net5.0/Udemy_dotNet.runtimeconfig.json
+/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/bin/Debug/net5.0/Udemy_dotNet.runtimeconfig.dev.json
+/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/bin/Debug/net5.0/Udemy_dotNet.dll
+/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/bin/Debug/net5.0/ref/Udemy_dotNet.dll
+/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/bin/Debug/net5.0/Udemy_dotNet.pdb
+/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/obj/Debug/net5.0/Udemy_dotNet.csproj.AssemblyReference.cache
+/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/obj/Debug/net5.0/Udemy_dotNet.GeneratedMSBuildEditorConfig.editorconfig
+/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/obj/Debug/net5.0/Udemy_dotNet.AssemblyInfoInputs.cache
+/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/obj/Debug/net5.0/Udemy_dotNet.AssemblyInfo.cs
+/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/obj/Debug/net5.0/Udemy_dotNet.csproj.CoreCompileInputs.cache
+/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/obj/Debug/net5.0/Udemy_dotNet.dll
+/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/obj/Debug/net5.0/ref/Udemy_dotNet.dll
+/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/obj/Debug/net5.0/Udemy_dotNet.pdb
+/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/obj/Debug/net5.0/Udemy_dotNet.genruntimeconfig.cache
