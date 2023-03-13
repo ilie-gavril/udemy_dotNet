@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/Udemy_dotNet.csproj": {}
+    "/Users/iliegavril/Documents/github/udemy_dotNet/Udemy_dotNet.csproj": {}
   },
   "projects": {
-    "/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/Udemy_dotNet.csproj": {
+    "/Users/iliegavril/Documents/github/udemy_dotNet/Udemy_dotNet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/Udemy_dotNet.csproj",
+        "projectUniqueName": "/Users/iliegavril/Documents/github/udemy_dotNet/Udemy_dotNet.csproj",
         "projectName": "Udemy_dotNet",
-        "projectPath": "/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/Udemy_dotNet.csproj",
+        "projectPath": "/Users/iliegavril/Documents/github/udemy_dotNet/Udemy_dotNet.csproj",
         "packagesPath": "/Users/iliegavril/.nuget/packages/",
-        "outputPath": "/Users/iliegavril/Projects/Udemy_dotNet/Udemy_dotNet/obj/",
+        "outputPath": "/Users/iliegavril/Documents/github/udemy_dotNet/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/iliegavril/.config/NuGet/NuGet.Config"

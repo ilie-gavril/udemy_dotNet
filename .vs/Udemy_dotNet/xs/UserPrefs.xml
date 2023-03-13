@@ -1,0 +1,26 @@
+﻿<Properties StartupConfiguration="{022CE810-57CD-4E4B-8312-C1B255D9421D}|Default">
+  <MonoDevelop.Ide.ItemProperties.Udemy__dotNet PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="xand0.cs">
+    <Files>
+      <File FileName="xand0.cs" Line="24" Column="17" />
+      <File FileName="Program.cs" Line="96" Column="21" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Udemy_dotNet" expanded="True">
+            <Node name="Udemy_dotNet" expanded="True">
+              <Node name="xand0.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
