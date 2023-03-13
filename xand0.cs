@@ -3,28 +3,42 @@ namespace Udemy_dotNet
 {
     public class xand0
     {
+        static string player;
+        static string playerSymbol;
         static string[,] initialTable = { { "1", "2", "3" }, { "4", "5", "6" }, { "7", "8", "9" } };
         static string[,] playableTable = { {"1","2","3"}, { "4", "5", "6" }, { "7", "8", "9"}};
+        static bool restartGame = false;
         public static void afisare()
         {
+            restartGame = CheckTable(playableTable);
             int i = 0;
             PrintTable(initialTable);
-            while (!CheckTable(playableTable))
+            if (restartGame)
             {
-                string player = i % 2 == 0 ? "player1" : "player2";
-                string playerSymbol = player == "player1" ? "0" : "X";
-                Console.WriteLine("{0}: Choose your field!", player);
-                string inputField = Console.ReadLine();
-                if (int.TryParse(inputField, out int chosenField))
+                Console.WriteLine("{0} has won the game", player);
+                Console.WriteLine("Press any key to restart the game!");
+                Console.ReadKey();
+                restartGame = false;
+            }
+            else
+            {
+                while (!restartGame)
                 {
-                    ChangeField(inputField, playerSymbol);
-                    PrintTable(playableTable);
+                    player = i % 2 == 0 ? "player1" : "player2";
+                    playerSymbol = player == "player1" ? "O" : "X";
+                    Console.WriteLine("{0}: Choose your field!", player);
+                    string inputField = Console.ReadLine();
+                    if (int.TryParse(inputField, out int chosenField))
+                    {
+                        ChooseField(inputField, playerSymbol);
+                        PrintTable(initialTable);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Please enter an valid field number!");
+                    }
+                    i++;
                 }
-                else
-                {
-                   Console.WriteLine("Please enter an valid field number!");
-                }
-                i++;
             }
         }
 
@@ -34,10 +48,18 @@ namespace Udemy_dotNet
             {
                 for (int j = 0; j < initialTable.GetLength(1); j++)
                 {
-                    if (initialTable[i, j] == field)
+                    if (playableTable[i, j] == field)
                     {
-                        playableTable[i, j] = playerSymbol;
-                        break;
+                        if (playableTable[i, j].Equals("X") && playableTable[i, j].Equals("O"))
+                        {
+                            Console.WriteLine("Field already marked!");
+                            break;
+                        }
+                        else
+                        {
+                            playableTable[i, j] = playerSymbol;
+                            break;
+                        }
                     }
                 }
             }
@@ -96,5 +118,45 @@ namespace Udemy_dotNet
             }
         }
 
+        private static void ChooseField(string inputField, string playerSymbol)
+        {
+            switch (inputField)
+            {
+                case "1":
+                    initialTable[0, 0] = playerSymbol;
+                    break;
+
+                case "2":
+                    initialTable[0, 1] = playerSymbol;
+                    break;
+
+                case "3":
+                    initialTable[0, 2] = playerSymbol;
+                    break;
+                
+                case "4":
+                    initialTable[1, 0] = playerSymbol;
+                    break;
+
+                case "5":
+                    initialTable[1, 1] = playerSymbol;
+                    break;
+
+                case "6":
+                    initialTable[1, 2] = playerSymbol;
+                    break;
+                case "7":
+                    initialTable[2, 0] = playerSymbol;
+                    break;
+                case "8":
+                    initialTable[2, 1] = playerSymbol;
+                    break;
+                case "9":
+                    initialTable[2, 2] = playerSymbol;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
