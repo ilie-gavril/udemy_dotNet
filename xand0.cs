@@ -1,162 +1,399 @@
 ﻿using System;
 namespace Udemy_dotNet
 {
-    public class xand0
+    public class TicTacToeProgram
     {
+        static string[,] board = { { "1", "2", "3" }, { "4", "5", "6" }, { "7", "8", "9" } };
         static string player;
         static string playerSymbol;
-        static string[,] initialTable = { { "1", "2", "3" }, { "4", "5", "6" }, { "7", "8", "9" } };
-        static string[,] playableTable = { {"1","2","3"}, { "4", "5", "6" }, { "7", "8", "9"}};
-        static bool restartGame = false;
-        public static void afisare()
+        static int i = 0;
+        public static void Run()
         {
-            restartGame = CheckTable(playableTable);
-            int i = 0;
-            PrintTable(initialTable);
-            if (restartGame)
+            do
             {
-                Console.WriteLine("{0} has won the game", player);
-                Console.WriteLine("Press any key to restart the game!");
+
+                PrintBoard();
+                PlayerTurn();
+
+            } while (!CheckWin());
+        }
+
+
+        public static bool CheckWin()
+        {
+            if (board[0, 0] == board[0, 1] && board[0, 1] == board[0, 2])
+            {
+                PrintBoard();
+                Console.WriteLine("{0}, has won the game!", player);
+                Console.WriteLine("Press any key to restart the game!", player);
                 Console.ReadKey();
-                restartGame = false;
-            }
-            else
-            {
-                while (!restartGame)
-                {
-                    player = i % 2 == 0 ? "player1" : "player2";
-                    playerSymbol = player == "player1" ? "O" : "X";
-                    Console.WriteLine("{0}: Choose your field!", player);
-                    string inputField = Console.ReadLine();
-                    if (int.TryParse(inputField, out int chosenField))
-                    {
-                        ChooseField(inputField, playerSymbol);
-                        PrintTable(initialTable);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Please enter an valid field number!");
-                    }
-                    i++;
-                }
-            }
-        }
-
-        private static void ChangeField(string field, string playerSymbol)
-        {
-            for(int i = 0; i < initialTable.GetLength(0); i++)
-            {
-                for (int j = 0; j < initialTable.GetLength(1); j++)
-                {
-                    if (playableTable[i, j] == field)
-                    {
-                        if (playableTable[i, j].Equals("X") && playableTable[i, j].Equals("O"))
-                        {
-                            Console.WriteLine("Field already marked!");
-                            break;
-                        }
-                        else
-                        {
-                            playableTable[i, j] = playerSymbol;
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-
-        private static void PrintTable(string[,] table)
-        {
-            Console.WriteLine("     |     |     ");
-            Console.WriteLine("  {0}  |  {1}  |  {2}  ", table[0, 0], table[0, 1], table[0, 2]); ;
-            Console.WriteLine("_____|_____|_____");
-            Console.WriteLine("     |     |     ");
-            Console.WriteLine("  {0}  |  {1}  |  {2}  ", table[1, 0], table[1, 1], table[1, 2]);
-            Console.WriteLine("_____|_____|_____");
-            Console.WriteLine("     |     |     ");
-            Console.WriteLine("  {0}  |  {1}  |  {2}  ", table[2, 0], table[2, 1], table[2, 2]);
-            Console.WriteLine("     |     |     ");
-        }
-
-        private static bool CheckTable(string[,] table)
-        {
-            if (table[0, 0].Equals(table[0, 1]) && table[0, 1].Equals(table[0, 2]))
-            {
+                RestartGame();
                 return true;
             }
-            else if (table[1, 0].Equals(table[1, 1]) && table[1, 1].Equals(table[1, 2]))
+            else if (board[1, 0] == board[1, 1] && board[1, 1] == board[1, 2])
             {
+                PrintBoard();
+                Console.WriteLine("{0}, has won the game!", player);
+                Console.WriteLine("Press any key to restart the game!", player);
+                Console.ReadKey();
+                RestartGame();
                 return true;
             }
-            else if (table[1, 0].Equals(table[1, 1]) && table[1, 1].Equals(table[1, 2]))
+            else if (board[2, 0] == board[2, 1] && board[2, 1] == board[2, 2])
             {
+                PrintBoard();
+                Console.WriteLine("{0}, has won the game!", player);
+                Console.WriteLine("Press any key to restart the game!", player);
+                Console.ReadKey();
+                RestartGame();
                 return true;
             }
-            else if (table[0, 0].Equals(table[1, 0]) && table[1, 0].Equals(table[2, 0]))
+            else if (board[0, 0] == board[1, 0] && board[1, 0] == board[2, 0])
             {
+                PrintBoard();
+                Console.WriteLine("{0}, has won the game!", player);
+                Console.WriteLine("Press any key to restart the game!", player);
+                Console.ReadKey();
+                RestartGame();
                 return true;
             }
-            else if (table[0, 1].Equals(table[1, 1]) && table[1, 1].Equals(table[2, 1]))
+            else if (board[0, 1] == board[1, 1] && board[1, 1] == board[2, 1])
             {
+                Console.WriteLine("{0}, has won the game!", player);
+                Console.WriteLine("Press any key to restart the game!", player);
+                Console.ReadKey();
+                RestartGame();
                 return true;
             }
-            else if (table[0, 2].Equals(table[1, 2]) && table[1, 1].Equals(table[2, 2]))
+            else if (board[0, 2] == board[1, 2] && board[1, 2] == board[2, 2])
             {
+                PrintBoard();
+                Console.WriteLine("{0}, has won the game!", player);
+                Console.WriteLine("Press any key to restart the game!", player);
+                Console.ReadKey();
+                RestartGame();
                 return true;
             }
-            else if (table[2, 0].Equals(table[2, 1]) && table[2, 1].Equals(table[2, 2]))//diagonala (3,5,7)
+            else if (board[0, 0] == board[1, 1] && board[1, 1] == board[2, 2])
             {
+                PrintBoard();
+                Console.WriteLine("{0}, has won the game!", player);
+                Console.WriteLine("Press any key to restart the game!", player);
+                Console.ReadKey();
+                RestartGame();
                 return true;
             }
-            else if (table[0, 0].Equals(table[1, 1]) && table[2, 2].Equals(table[2, 1]))//diagonala (1,5,9)
+            else if (board[0, 2] == board[1, 1] && board[1, 1] == board[2, 0])
             {
+                PrintBoard();
+                Console.WriteLine("{0}, has won the game!", player);
+                Console.WriteLine("Press any key to restart the game!", player);
+                Console.ReadKey();
+                RestartGame();
+                return true;
+            }
+            else if ( 
+                !board[0,0].Equals("1") && !board[0, 1].Equals("2") &&
+                !board[0, 2].Equals("3") && !board[1, 0].Equals("4") &&
+                !board[1, 1].Equals("5") && !board[1, 2].Equals("6") &&
+                !board[2, 0].Equals("7") && !board[2, 1].Equals("8") &&
+                !board[2, 2].Equals("9"))
+            {
+                Console.WriteLine("Draw!");
+                Console.WriteLine("Press any key to restart the game!", player);
+                Console.ReadKey();
+                RestartGame();
                 return true;
             }
             else
             {
                 return false;
             }
+
         }
 
-        private static void ChooseField(string inputField, string playerSymbol)
+        public static void PrintBoard()
         {
-            switch (inputField)
+            Console.WriteLine($"   |   |   " +
+    $"\n {board[0, 0]} | {board[0, 1]} | {board[0, 2]} " +
+    $"\n___|___|___" +
+    $"\n   |   |   " +
+    $"\n {board[1, 0]} | {board[1, 1]} | {board[1, 2]} " +
+    $"\n___|___|___" +
+    $"\n   |   |   " +
+    $"\n {board[2, 0]} | {board[2, 1]} | {board[2, 2]} " +
+    $"\n   |   |   ");
+        }
+
+        public static void PlayerTurn()
+        {
+            
+            player = i % 2 == 0 ? "player1" : "player2";
+            playerSymbol = player == "player1" ? "O" : "X";
+            Console.WriteLine("{0}, please enter field number:", player);
+            string input = Console.ReadLine();
+            if (int.TryParse(input, out int number))
+            {
+                if(player.Equals("player1"))
+                {
+                    boardUpdate0(input, board);
+                }
+                else
+                {
+                    boardUpdateX(input, board);
+                }
+            }
+            else
+            {
+                PrintBoard();
+                Console.WriteLine("Please enter valid filed value!");
+            }
+        }
+
+        public static void boardUpdate0(string field, string[,] board)
+        {
+            switch (field)
             {
                 case "1":
-                    initialTable[0, 0] = playerSymbol;
+                    if (board[0, 0].Equals("X") || board[0, 0].Equals("O"))
+                    {
+                        Console.WriteLine("Field already filled!");
+                        PlayerTurn();
+                    }
+                    else
+                    {
+                        board[0, 0] = "O";
+                        i++;
+                    }
                     break;
-
                 case "2":
-                    initialTable[0, 1] = playerSymbol;
+                    if (board[0, 1].Equals("X") || board[0, 1].Equals("O"))
+                    {
+                        Console.WriteLine("Field already filled!");
+                        PlayerTurn();
+                    }
+                    else
+                    {
+                        board[0, 1] = "O";
+                        i++;
+                    }
                     break;
-
                 case "3":
-                    initialTable[0, 2] = playerSymbol;
+                    if (board[0, 2].Equals("X") || board[0, 2].Equals("O"))
+                    {
+                        Console.WriteLine("Field already filled!");
+                        PlayerTurn();
+                    }
+                    else
+                    {
+                        board[0, 2] = "O";
+                        i++;
+                    }
                     break;
-                
                 case "4":
-                    initialTable[1, 0] = playerSymbol;
+                    if (board[1, 0].Equals("X") || board[1, 0].Equals("O"))
+                    {
+                        Console.WriteLine("Field already filled!");
+                        PlayerTurn();
+                    }
+                    else
+                    {
+                        board[1, 0] = "O";
+                        i++;
+                    }
                     break;
-
                 case "5":
-                    initialTable[1, 1] = playerSymbol;
+                    if (board[1, 1].Equals("X") || board[1, 1].Equals("O"))
+                    {
+                        Console.WriteLine("Field already filled!");
+                        PlayerTurn();
+                    }
+                    else
+                    {
+                        board[1, 1] = "O";
+                        i++;
+                    }
                     break;
-
                 case "6":
-                    initialTable[1, 2] = playerSymbol;
+                    if (board[1, 2].Equals("X") || board[1, 2].Equals("O"))
+                    {
+                        Console.WriteLine("Field already filled!");
+                        PlayerTurn();
+                    }
+                    else
+                    {
+                        board[1, 2] = "O";
+                        i++;
+                    }
                     break;
                 case "7":
-                    initialTable[2, 0] = playerSymbol;
+                    if (board[2, 0].Equals("X") || board[2, 0].Equals("O"))
+                    {
+                        Console.WriteLine("Field already filled!");
+                        PlayerTurn();
+                    }
+                    else
+                    {
+                        board[2, 0] = "O";
+                        i++;
+                    }
                     break;
                 case "8":
-                    initialTable[2, 1] = playerSymbol;
+                    if (board[2, 1].Equals("X") || board[2, 1].Equals("O"))
+                    {
+                        Console.WriteLine("Field already filled!");
+                        PlayerTurn();
+                    }
+                    else
+                    {
+                        board[2, 1] = "O";
+                        i++;
+                    }
                     break;
                 case "9":
-                    initialTable[2, 2] = playerSymbol;
+                    if (board[2, 2].Equals("X") || board[2, 2].Equals("O"))
+                    { 
+                        Console.WriteLine("Field already filled!");
+                        PlayerTurn();
+                    }
+                    else
+                    {
+                        board[2, 2] = "O";
+                        i++;
+                    }
                     break;
                 default:
+                    PrintBoard();
+                    Console.WriteLine("You entered an value out of fields! Try Again");
+                    PlayerTurn();
                     break;
             }
+        }
+        public static void boardUpdateX(string field, string[,] board)
+        {
+            switch (field)
+            {
+                case "1":
+                    if (board[0, 0].Equals("O") || board[0, 0].Equals("X"))
+                    {
+                        Console.WriteLine("Field already filled!");
+                        PlayerTurn();
+                    }
+                    else
+                    {
+                        board[0, 0] = "X" ;
+                        i++;
+                    }
+                    break;
+                case "2":
+                    if (board[0, 1].Equals("O") || board[0, 1].Equals("X"))
+                    {
+                        Console.WriteLine("Field already filled!");
+                        PlayerTurn();
+                    }
+                    else
+                    {
+                        board[0, 1] = "X";
+                        i++;
+                    }
+                    break;
+                case "3":
+                    if (board[0, 2].Equals("O") || board[0, 2].Equals("X"))
+                    {
+                        Console.WriteLine("Field already filled!");
+                        PlayerTurn();
+                    }
+                    else
+                    {
+                        board[0, 2] = "X";
+                        i++;
+                    }
+                    break;
+                case "4":
+                    if (board[1, 0].Equals("O") || board[1, 0].Equals("X"))
+                    {
+                        Console.WriteLine("Field already filled!");
+                        PlayerTurn();
+                    }
+                    else
+                    {
+                        board[1, 0] = "X";
+                        i++;
+                    }
+                    break;
+                case "5":
+                    if (board[1, 1].Equals("O") || board[1, 1].Equals("X"))
+                    {
+                        Console.WriteLine("Field already filled!");
+                        PlayerTurn();
+                    }
+                    else
+                    {
+                        board[1, 1] = "X";
+                        i++;
+                    }
+                    break;
+                case "6":
+                    if (board[1, 2].Equals("O") || board[1, 2].Equals("X"))
+                    {
+                        Console.WriteLine("Field already filled!");
+                        PlayerTurn();
+                    }
+                    else
+                    {
+                        board[1, 2] = "X";
+                        i++;
+                    }
+                    break;
+                case "7":
+                    if (board[2, 0].Equals("O") || board[2, 0].Equals("X"))
+                    {
+                        Console.WriteLine("Field already filled!");
+                        PlayerTurn();
+                    }
+                    else
+                    {
+                        board[2, 0] = "X";
+                        i++;
+                    }
+                    break;
+                case "8":
+                    if (board[2, 1].Equals("O") || board[2, 1].Equals("X"))
+                    {
+                        Console.WriteLine("Field already filled!");
+                        PlayerTurn();
+                    }
+                    else
+                    {
+                        board[2, 1] = "X";
+                        i++;
+                    }
+                    break;
+                case "9":
+                    if (board[2, 2].Equals("O") || board[2, 2].Equals("X"))
+                    {
+                        Console.WriteLine("Field already filled!");
+                        PlayerTurn();
+                    }
+                    else
+                    {
+                        board[2, 2] = "X";
+                        i++;
+                    }
+                    break;
+                default:
+                    PrintBoard();
+                    Console.WriteLine("You entered an value out of fields! Try Again");
+                    PlayerTurn();
+                    break;
+            }
+        }
+
+        public static void RestartGame()
+        {
+            board = new string [,] { { "1", "2", "3" }, { "4", "5", "6" }, { "7", "8", "9" } };
+            i = 0;
+            Run();
         }
     }
 }

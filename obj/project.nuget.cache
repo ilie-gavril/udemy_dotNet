@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2kthQLuJE2RifJpMOqNlmp8+0XSIoEHJ6lADYA0cJBRTsNaokRj22+RLaDfp7C02j9xI0j+b4B0N5kzDww2E5g==",
+  "dgSpecHash": "3DGcIfD6QpXiy7rHebdwfpgFg9vMHWIs1b24GDMAFoRZdxaI30r1kPJSPmmGIks9RsDTXO64ipVTCFxEu0TbSw==",
   "success": true,
-  "projectFilePath": "F:\\gitDev\\udemy_dotNet\\Udemy_dotNet.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Ilieg\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\Ilieg\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\Ilieg\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\Ilieg\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
-  ],
+  "projectFilePath": "/Users/iliegavril/Documents/github/udemy_dotNet/Udemy_dotNet.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

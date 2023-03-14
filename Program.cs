@@ -93,7 +93,7 @@ namespace Udemy_dotNet
 
 
             //MultiDimensional_Arrays.Ex2();
-            xand0.afisare();
+            TicTacToeProgram.Run();
 
         }
     }
