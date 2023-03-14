@@ -11,6 +11,7 @@ namespace Udemy_dotNet
         {
             do
             {
+                Console.Clear();
                 PrintBoard();
                 PlayerTurn();
             } while (!CheckWin());
@@ -21,12 +22,7 @@ namespace Udemy_dotNet
         {
             if (board[0, 0] == board[0, 1] && board[0, 1] == board[0, 2])
             {
-                PrintBoard();
-                Console.WriteLine("{0}, has won the game!", player);
-                Console.WriteLine("Press any key to restart the game!", player);
-                Console.ReadKey();
-                RestartGame();
-                return true;
+                return WinGame();
             }
             else if (board[1, 0] == board[1, 1] && board[1, 1] == board[1, 2])
             {
@@ -56,13 +52,15 @@ namespace Udemy_dotNet
             {
                 return WinGame();
             }
-            else if ( 
-                !board[0,0].Equals("1") && !board[0, 1].Equals("2") &&
+            else if (
+                !board[0, 0].Equals("1") && !board[0, 1].Equals("2") &&
                 !board[0, 2].Equals("3") && !board[1, 0].Equals("4") &&
                 !board[1, 1].Equals("5") && !board[1, 2].Equals("6") &&
                 !board[2, 0].Equals("7") && !board[2, 1].Equals("8") &&
                 !board[2, 2].Equals("9"))
             {
+                Console.Clear();
+                PrintBoard();
                 Console.WriteLine("Draw!");
                 Console.WriteLine("Press any key to restart the game!", player);
                 Console.ReadKey();
@@ -91,14 +89,14 @@ namespace Udemy_dotNet
 
         public static void PlayerTurn()
         {
-            
+
             player = i % 2 == 0 ? "player1" : "player2";
             playerSymbol = player == "player1" ? "O" : "X";
             Console.WriteLine("{0}, please enter field number:", player);
             string input = Console.ReadLine();
             if (int.TryParse(input, out int number))
             {
-                if(player.Equals("player1"))
+                if (player.Equals("player1"))
                 {
                     boardUpdate0(input, board);
                 }
@@ -216,7 +214,7 @@ namespace Udemy_dotNet
                     break;
                 case "9":
                     if (board[2, 2].Equals("X") || board[2, 2].Equals("O"))
-                    { 
+                    {
                         Console.WriteLine("Field already filled!");
                         PlayerTurn();
                     }
@@ -245,7 +243,7 @@ namespace Udemy_dotNet
                     }
                     else
                     {
-                        board[0, 0] = "X" ;
+                        board[0, 0] = "X";
                         i++;
                     }
                     break;
@@ -355,6 +353,7 @@ namespace Udemy_dotNet
 
         public static bool WinGame()
         {
+            Console.Clear();
             PrintBoard();
             Console.WriteLine("{0}, has won the game!", player);
             Console.WriteLine("Press any key to restart the game!", player);
@@ -364,7 +363,7 @@ namespace Udemy_dotNet
         }
         public static void RestartGame()
         {
-            board = new string [,] { { "1", "2", "3" }, { "4", "5", "6" }, { "7", "8", "9" } };
+            board = new string[,] { { "1", "2", "3" }, { "4", "5", "6" }, { "7", "8", "9" } };
             i = 0;
             Console.Clear();
             Run();
