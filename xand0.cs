@@ -11,10 +11,8 @@ namespace Udemy_dotNet
         {
             do
             {
-
                 PrintBoard();
                 PlayerTurn();
-
             } while (!CheckWin());
         }
 
@@ -32,65 +30,31 @@ namespace Udemy_dotNet
             }
             else if (board[1, 0] == board[1, 1] && board[1, 1] == board[1, 2])
             {
-                PrintBoard();
-                Console.WriteLine("{0}, has won the game!", player);
-                Console.WriteLine("Press any key to restart the game!", player);
-                Console.ReadKey();
-                RestartGame();
-                return true;
+                WinGame();
             }
             else if (board[2, 0] == board[2, 1] && board[2, 1] == board[2, 2])
             {
-                PrintBoard();
-                Console.WriteLine("{0}, has won the game!", player);
-                Console.WriteLine("Press any key to restart the game!", player);
-                Console.ReadKey();
-                RestartGame();
-                return true;
+                WinGame();
             }
             else if (board[0, 0] == board[1, 0] && board[1, 0] == board[2, 0])
             {
-                PrintBoard();
-                Console.WriteLine("{0}, has won the game!", player);
-                Console.WriteLine("Press any key to restart the game!", player);
-                Console.ReadKey();
-                RestartGame();
-                return true;
+                WinGame();
             }
             else if (board[0, 1] == board[1, 1] && board[1, 1] == board[2, 1])
             {
-                Console.WriteLine("{0}, has won the game!", player);
-                Console.WriteLine("Press any key to restart the game!", player);
-                Console.ReadKey();
-                RestartGame();
-                return true;
+                WinGame();
             }
             else if (board[0, 2] == board[1, 2] && board[1, 2] == board[2, 2])
             {
-                PrintBoard();
-                Console.WriteLine("{0}, has won the game!", player);
-                Console.WriteLine("Press any key to restart the game!", player);
-                Console.ReadKey();
-                RestartGame();
-                return true;
+                WinGame();
             }
             else if (board[0, 0] == board[1, 1] && board[1, 1] == board[2, 2])
             {
-                PrintBoard();
-                Console.WriteLine("{0}, has won the game!", player);
-                Console.WriteLine("Press any key to restart the game!", player);
-                Console.ReadKey();
-                RestartGame();
-                return true;
+                WinGame();
             }
             else if (board[0, 2] == board[1, 1] && board[1, 1] == board[2, 0])
             {
-                PrintBoard();
-                Console.WriteLine("{0}, has won the game!", player);
-                Console.WriteLine("Press any key to restart the game!", player);
-                Console.ReadKey();
-                RestartGame();
-                return true;
+                WinGame();
             }
             else if ( 
                 !board[0,0].Equals("1") && !board[0, 1].Equals("2") &&
@@ -389,10 +353,20 @@ namespace Udemy_dotNet
             }
         }
 
+        public static bool WinGame()
+        {
+            PrintBoard();
+            Console.WriteLine("{0}, has won the game!", player);
+            Console.WriteLine("Press any key to restart the game!", player);
+            Console.ReadKey();
+            RestartGame();
+            return true;
+        }
         public static void RestartGame()
         {
             board = new string [,] { { "1", "2", "3" }, { "4", "5", "6" }, { "7", "8", "9" } };
             i = 0;
+            Console.Clear();
             Run();
         }
     }
