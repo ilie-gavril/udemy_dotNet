@@ -96,7 +96,10 @@ namespace Udemy_dotNet
             //TicTacToeProgram.Run();
             //JaggedArrays.Run();
             //ArraysAsParams.Run();
-            Params.Run("this", "is", "something");
+            //dictionariesPractices.Run();
+
+            //StacksPractices.Run();
+            QueuePractices.Run();
         }
     }
 }
