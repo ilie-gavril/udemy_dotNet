@@ -93,8 +93,13 @@ namespace Udemy_dotNet
 
 
             //MultiDimensional_Arrays.Ex2();
-            TicTacToeProgram.Run();
+            //TicTacToeProgram.Run();
+            //JaggedArrays.Run();
+            //ArraysAsParams.Run();
+            //dictionariesPractices.Run();
 
+            //StacksPractices.Run();
+            QueuePractices.Run();
         }
     }
 }
